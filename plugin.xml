@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com-outsystems-changewkconfig" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>cordova-outsystems-changewkconfig</name>
+    <platform name="ios">
+
+    <hook src="hooks/ios/replaceConfigurationValues.js" type="after_plugin_add"/>
+
+        <config-file parent="/*" target="config.xml">    
+            <feature name="cordova-outsystems-changewkconfig">
+                <param name="ios-package" value="cordova-outsystems-changewkconfig" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/ios/OSWKWebViewEngine+ConfigurationChanger.m" />
+        <source-file src="src/ios/OSWKWebViewEngine+ConfigurationChanger.h" />
+        
+    </platform>
+</plugin>
